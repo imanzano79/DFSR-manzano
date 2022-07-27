@@ -49,6 +49,41 @@ for x in nombres:
     print(x)
 
 
+##While
+
+i = 0
+
+while i < len(nombres):
+    print(nombres[i])
+    i = i + 1
+
+
+
+nombres = ["Paola", "Carlos", "Mario", "Israel", "Manuel", "Luis", "Guillermo", "David"] 
+
+
+#ordenar la lista de forma ascendente
+nombres.sort()
+print(nombres)
+
+
+#Indicar al programa ordenar la lista de nombres por longitud, del más pequeño al más largo.
+nombres.sort(key=len)
+print(nombres)
+
+
+#reverse=True ordenará la lista en orden alfabético inverso.
+nombres.sort(reverse=True)
+print(nombres)
+
+
+nombres.sort(key=len,reverse=True)
+print(nombres)
+
+
+
+
+
 
 
 

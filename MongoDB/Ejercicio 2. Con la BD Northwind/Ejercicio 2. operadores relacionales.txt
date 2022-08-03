@@ -8,7 +8,9 @@ db.products.find({ UnitPrice: { $lte : 42  } })
 
 db.products.find({ CategoryID:{$eq: 7  } } )
 
+db.products.find({ UnitsInStock: {$gte : 13, $lte : 49  } } 
 
+db.products.find({ UnitPrice: {$gte :9.2, $lte :123.79  } } )
 
 db.orders.find({ CustomerID: {$eq: "BLONP" }  } )
 

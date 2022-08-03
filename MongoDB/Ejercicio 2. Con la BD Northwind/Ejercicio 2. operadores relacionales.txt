@@ -1,0 +1,18 @@
+db.products.find({ UnitPrice: { $gt : 12  } })
+ 
+db.products.find({ UnitPrice: { $lt : 36  } })
+
+db.products.find({ UnitPrice: { $gte : 20  } })
+
+db.products.find({ UnitPrice: { $lte : 42  } })
+
+db.products.find({ CategoryID:{$eq: 7  } } )
+
+
+
+db.orders.find({ CustomerID: {$eq: "BLONP" }  } )
+
+db.orders.find({ ShipCity: {$eq: "Oulu"}  } )
+
+db.orders.find({ ShipCountry: {$eq: "USA"}  } )
+

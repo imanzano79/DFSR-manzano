@@ -1,0 +1,28 @@
+
+1. Hacer una copia de la collection orders a una nueva collection llamada Ordenes.
+
+db.orders.aggregate([{$out : "Ordenes" }])
+
+
+
+2. Eliminar la orden 10248
+
+db.Ordenes.deleteOne({ "OrderID" : 10248 })
+
+
+
+
+
+3. Eliminar al empleado 4
+
+db.empleados.deleteOne({ "EmployeeID" : {$eq : 4 } })
+
+
+
+
+
+4. Eliminar las ordenes del empleado 4 cuyo freight sea mayor o igual a 55.
+
+db.Ordenes.deleteOne({$and: [{EmployeeID: 4} , {Freight:{$gte:55}}]})
+
+

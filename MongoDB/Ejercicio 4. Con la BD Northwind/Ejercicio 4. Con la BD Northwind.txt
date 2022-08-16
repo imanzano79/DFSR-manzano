@@ -1,0 +1,68 @@
+
+1. Hacer una copia de la collection products a una nueva collection llamada Articulos.
+
+db.products.aggregate([{$out : "Articulos" }])
+
+
+
+
+
+2. Realizar un descuento del 50% a los productos de la categoría 3 .
+
+db.Articulos.update({ "CategoryID": { $eq: 3 } }, { $mul: { UnitPrice: 0.5 }},{multi:true});
+db.Articulos.updateMany({ "CategoryID": { $eq: 3 } }, { $mul: { UnitPrice: 0.5 }});
+
+
+
+3. Realizar un descuento del 25% a los productos de la categoría 2 que valgan más de 20 dls.
+
+db.Articulos.updateMany({  $and:[ {"CategoryID": { $eq: 2 } },  { UnitPrice: { $gt: 20}}]} ,{ $mul: { UnitPrice: 0.2 }});
+
+
+
+
+
+4. Agregar una tupla llamada (Solicitud a proveedor : 20) a los pedidos que tengan menos de 15 unidades. Verificar que el producto NO se encuentre descontinuado.
+
+db.Articulos.updateMany({ $and :[ {UnitsInStock: {$lt : 15}}, {Discontinued: {$eq: 0 }}]} , {$set: {"Solicitud a Proveedor" : 20}});
+
+
+
+
+
+
+5. Cambiar el valor de los productos con la solicitud de proveedor (como si llegaran los productos) y quitar la tupla “Solicitud a proveedor”.
+
+db.Articulos.updateMany
+
+
+
+
+6. Cambiar el precio del producto “Queso Manchego La Pastora” a 40 dls.
+
+db.Articulos.updateOne({ ProductID : 12} , {$set : { UnitPrice: 40 }})
+
+
+
+
+
+7. Hacer una copia de la collection employees a una nueva collection llamada Empleados.
+
+db.employees.aggregate([{$out : "empleados" }])
+
+
+
+
+
+
+
+8. Cambiar el puesto de Nancy a Gerente de ventas.db.products.aggregate([{$out : "Articulos" }])
+
+db.empleados.updateOne({FirstName : 'Nancy'} , {$set : {Title: 'Gerente de ventas'}})
+
+
+
+
+
+
+

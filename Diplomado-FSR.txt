@@ -102,11 +102,11 @@ db.products.find ({ ProductName: /ef/})
 
 
 
+> db.Libros.updateOne({id : "a" }, {$push : editoriales: "PRUEBA"}})
 
 
+> db.Libros.updateOne({_id : "a" }, {$pull : {editoriales: "PRUEBA"}})
 
-
-db.empleados.updateOne({_id : 1}, {$set : {FirstName: }
 
 
 

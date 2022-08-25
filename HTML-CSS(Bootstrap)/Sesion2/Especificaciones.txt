@@ -1,0 +1,26 @@
+Especificaciones primer ejercicio
+
+Realizar una pagina web que contenga lo siguiente: 
+
+-Página principal
+    - Barra de navegación horizontal con los siguientes menús FUNCIONALES
+        - Inicio
+        - Acerca de Nosotros
+        - Información de su tema 
+        - Galería (Solo hacer la página contenedora con 2 imágenes)
+        - A elección. 
+    - Usar imágenes representativas del tema. 
+    - Colores a elección. 
+    - Textos variados. 
+
+    Divisor que divida en 2, y uno en 3 el contedidos. 
+    - 33.3% 
+
+    
+
+    Por lo menos dos páginas deben ir separada (un total de tres archivos) y dos secciones dentro del 
+    cuerpo del archivo principal. 
+
+NOTA: Separar el codigo HTML del CSS con una etiqueta STYLE en el HEAD. 
+
+

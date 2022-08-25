@@ -1,0 +1,111 @@
+body{
+    margin: 0;
+    background-color: blanchedalmond;
+    
+}
+ul{
+    width: 100%;
+    top:0;
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+    background-color: #8898b4 ;
+    padding: 0;
+ 
+    position: fixed;
+}
+li{
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: x-large;
+}
+
+#inicio{
+    background-color: #8898b4;
+}
+
+li a:hover:not(#inicio){
+    background-color: rgba(122, 219, 127, 0.493);
+}
+
+h1{
+    background-color: rgba(152, 194, 154, 0.493);
+    font-size: xx-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    margin: 0;
+    color: rgb(150, 126, 150);
+}
+img{
+    margin: 0;
+}
+
+.contenedor{
+    width: 100%;
+    
+}
+.mitad{
+    width: 40%;
+    text-align: justify;
+    float: left;
+    padding: 5%;
+    height: 600px;
+}
+
+.card {
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+width: 30%;
+padding-left: 3%;
+float: left;
+}
+
+.card:hover {
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container-card {
+padding: 2px 16px;
+}
+    
+.img-resp{
+   width: 80%;
+   padding: 5%;
+   height: 300px;
+   border-radius: 15%;
+   border: 1px solid green;
+}
+H2{
+    text-align: center;
+    font-family: fantasy;
+    font-size: 2em;
+}
+
+#conteiner{
+    margin-top: 100px;
+    width: 100%;
+    text-align: center;
+}
+
+#perritos{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 10%;
+}
+#perritos td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+}
+.form-element{
+    padding: 10px;
+}
+

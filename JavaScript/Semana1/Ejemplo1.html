@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+,<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,37 +7,31 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>JavaScript</h1>
+
+
     
-<h1>JavaScript</h1>
-
-
 </body>
 
 <script>
+    let nombre; 
+    var edad; 
 
-    let nombre;
-    var edad;
+    nombre = prompt('Hola, como te llamas? '); 
+    edad = prompt('Que edad tienes? '); 
+    var estado;
+    console.log("Nombre:: ", nombre )
+    console.log("Edad::", edad)
 
-nombre= prompt('Hola, como te llamas?'),
-edad = prompt ('Que edad tienes?');
-
-console.log("Nombre:: ", nombre )
-console.log("Edad::", edad)
-
-
-    if(edad >=18 ){
-
+    if(edad >= 18 ){
         estado = "mayor"
-    }
-    else{
+    }else{
         estado = "menor"
     }
 
-document.write("Hola " , nombre , " tienes " , edad, "por lo tanto eres ", estado,  );
+    document.write("Hola " , nombre, ' tienes ' , edad , ' por lo tanto eres ' , estado, ' de <b>edad</b>') ;
 
 
 
 </script>
-
-
 </html>

@@ -17,29 +17,68 @@
 
 <body>       
 
-    <div class="container">
-        <div class="row mt-4">
-        <div class="col-md">
+    <!-- Navbar -->
+ <nav class="navbar navbar-expand-lg navbar-light bg-white">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+      data-mdb-target="#navbarExample01" aria-controls="navbarExample01" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarExample01">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/calculadora">Calculadora</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Tablas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Navbar -->
 
-            <h1>Calculadora</h1>
+
+
+<div class="container">
+  <div class="p-5 text-justify bg-light">
+
+           <h1>Calculadora </h1>
 
         <form action="resultado" method="post">
             <div class="form-group">
-                <label for="num1">Ingresa el primer numero:</label>
-                 <input type="number"  class="form-control"  name="num1">
+                <label for="numero1">Ingresa el primer numero:</label>
+                 <input type="number" class="form-control"  name="numero1">
             </div>
                
             
             <div class="form-group">
-              <label for="num2">Ingresa el segundo numero:</label>
-              <input type="number" class="form-control" name="num2">        
+              <label for="numero2">Ingresa el segundo numero:</label>
+              <input type="number" class="form-control" name="numero2">        
             </div>
 
-            <button class="btn btn-primary" type="submit">Enviar</button>
+
+              <div class="form-group">
+                  <select name="operacion" class="form-control">
+                    <option value="suma">(+) Suma</option>
+                    <option value="resta">(-) Resta</option>
+                    <option value="multiplicacion">(*) Multiplicacion</option>
+                    <option value="division">(/) Division</option>
+                  </select>
+              </div>
+  
+              <button  type="submit" class="btn btn-primary">Enviar</button>
 
         </form>
-
-
+    </div>
+  </div>
 
 </body>
 </html>

@@ -78,8 +78,7 @@ $(document).ready(
 
         $(".detalle").click(function(e){
             let descripcionDetalle;
-            let unidades
-            
+            let unidades            
             //console.log("CLICK EN EL RENGLON");
             descripcionDetalle =   $(this).closest("tr").find(".descripcionDetalle").text();
            // console.log("descripcionDetalle::", descripcionDetalle);

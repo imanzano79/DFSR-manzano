@@ -64,6 +64,53 @@ app.post('/resultado', (req, res) => {
         console.log("numero2", num2);
 
 })
+
+
+app.get('/tablas' , (req, res)=>{
+
+    res.render('Tablas.ejs'); 
+ });
+
+
+app.post('/tablas', (req, res) => {
+
+    var tabla = req.body.numero;
+    console.log(tabla)
+
+    if(tabla){
+
+        pagina = '<!DOCTYPE html> <html lang="en"> <body> <h1> La tabla del ' + tabla + ' es: </h1>';
+
+            for (i = 1; i<=10; i++){
+
+                                
+                pagina = pagina + "<p>  "  + tabla + " X " + i + " = " + tabla * i +  "</p>" ;
+
+            }
+
+        pagina = pagina + '<body> </html>';
+
+        res.send(pagina);
+    }
+
+});
+
+
+
+app.get('/factura' , (req, res)=>{
+
+    res.render('Factura.ejs'); 
+ });
+
+
+app.post('/factura', (req, res) => {
+
+
+
+});
+
+
+
 app.listen(9000, ()=>{
         console.log("Servidor Alzado");
 })

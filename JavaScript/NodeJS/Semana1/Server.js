@@ -104,7 +104,32 @@ app.get('/factura' , (req, res)=>{
 
 
 app.post('/factura', (req, res) => {
+    
+    var factura = req.body.nombre;
+    var factura = req.body.rfc;
+    var factura = req.body.clavearticulo;
+    var factura = req.body.precio;
+    var factura = req.body.cantidad;
 
+
+
+/*  let nombre;
+    let rfc;
+    let clavearticulo;    
+    let precio;
+    let cantidad; */
+    //console.log("CLICK EN EL RENGLON");
+    nombre =   $(this).closest("tr").find(".nombre").text();
+    rfc =   $(this).closest("tr").find(".rfc").text();
+    clavearticulo =   $(this).closest("tr").find(".clavearticulo").text();
+    precio =   $(this).closest("tr").find(".precio").text();     
+    cantidad =   $(this).closest("tr").find(".cantidad").text();
+    // console.log("clavearticulo::", clavearticulo);
+    $(tr).find(".nombre").val(nombre);
+    $(tr).find(".rfc").val(rfc);
+    $(tr).find(".clavearticulo").val(clavecliente);    
+    $(tr).find(".precio").val(precio);
+    $(tr).find(".cantidad").val(cantidad);
 
 
 });

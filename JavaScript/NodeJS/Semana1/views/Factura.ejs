@@ -42,7 +42,7 @@
   <!-- Navbar -->
 
 
-  <div class="container">
+ <div class="container">
     <div class="row">
         <div class="col-xs-10 ">
             
@@ -55,6 +55,7 @@
        
 
     </tbody>
+    <form action="factura" method="POST">
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -69,25 +70,46 @@
       <tbody>
         <tr>
           <td>
-            <input type='text' class='nombre'  placeholder='Nombre' />
-            </td>
-            <td>
-              <input type='text' class='rfc' placeholder='RFC'/>
-              </td>
-          <td>
-          <input type='text' class='clavearticulo' placeholder='Clave Articulo' /> 
+          <input type='text' name='nombre'  placeholder='Nombre' />
           </td>
           <td>
-          <input type='text' class='precio'  placeholder='Precio' />
+          <input type='text' name='rfc' placeholder='RFC'/>
           </td>
           <td>
-          <input type='text' class='cantidad' placeholder='Cantidad'/>
+          <input type='text' name='clavearticulo' placeholder='Clave Articulo' /> 
           </td>
-          </tr>
+          <td>
+          <input type='number' name='precio'  placeholder='Precio' />
+          </td>
+          <td>
+          <input type='number' class='cantidad' placeholder='Cantidad'/>
+          </td>
+        </tr>
+
+        <tfoot  >
+          <th></th>
+                  <tr id="filaSubtotal">
+                      <td class="text-right">Subtotal:</td>
+                      <td class="text-right" id='subtotal'>0.0</td>
+                  </tr>
+                  <tr id="filaIva">
+                      <td class="text-right">Iva:</td>
+                      <td class="text-right" id="iva">0.0</td>
+                  </tr>
+                  <tr id="filaTotal">
+                      <td class="text-right">Total:</td>
+                      <td class="text-right" id="total">0.0</td>
+                  </tr>
+              </tfoot>  
+  
 
     </table>
 
-     <button class= "btn-primary" id="agregar2">Enviar :</button> 
+
+       <button  type="submit" class="btn btn-primary">Enviar</button>
+
+  </form> 
+
 
 </body>
 </html>

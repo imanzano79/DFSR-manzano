@@ -105,32 +105,32 @@ app.get('/factura' , (req, res)=>{
 
 app.post('/factura', (req, res) => {
     
-    var factura = req.body.nombre;
-    var factura = req.body.rfc;
-    var factura = req.body.clavearticulo;
-    var factura = req.body.precio;
-    var factura = req.body.cantidad;
+    var nombre = req.body.nombre;
+    var rfc = req.body.rfc;
+    var clavearticulo = req.body.clavearticulo;
+    var precio = req.body.precio;
+    var cantidad = req.body.cantidad;
+    var subtotal = 0; 
+    var iva = 0;
+    var total = 0;
 
 
 
-/*  let nombre;
-    let rfc;
-    let clavearticulo;    
-    let precio;
-    let cantidad; */
-    //console.log("CLICK EN EL RENGLON");
-    nombre =   $(this).closest("tr").find(".nombre").text();
-    rfc =   $(this).closest("tr").find(".rfc").text();
-    clavearticulo =   $(this).closest("tr").find(".clavearticulo").text();
-    precio =   $(this).closest("tr").find(".precio").text();     
-    cantidad =   $(this).closest("tr").find(".cantidad").text();
-    // console.log("clavearticulo::", clavearticulo);
-    $(tr).find(".nombre").val(nombre);
-    $(tr).find(".rfc").val(rfc);
-    $(tr).find(".clavearticulo").val(clavecliente);    
-    $(tr).find(".precio").val(precio);
-    $(tr).find(".cantidad").val(cantidad);
+        pagina = '<!DOCTYPE html> <html lang="en"> <body> <h1> FACTURA:</h1>';   
+                                
+                pagina = pagina + "<p> "  + nombre +"  "+ rfc + " compro  </p>" ;         
+                pagina = pagina + "<p> "  + clavearticulo + "  </p>";
+                pagina = pagina +  (subtotal +=);
+                pagina = pagina + (iva = subtotal*0.16);
+                pagina = pagina + (total = subtotal+iva);
 
+        pagina = pagina + '<body> </html>';
+
+        res.send(pagina);
+
+
+ 
+    
 
 });
 

@@ -104,25 +104,26 @@ app.get('/factura' , (req, res)=>{
 
 
 app.post('/factura', (req, res) => {
-    
     var nombre = req.body.nombre;
     var rfc = req.body.rfc;
     var clavearticulo = req.body.clavearticulo;
     var precio = req.body.precio;
     var cantidad = req.body.cantidad;
-    var subtotal = 0; 
-    var iva = 0;
-    var total = 0;
+    var subtotal = parseFloat (precio * cantidad);  req.body.subtotal; 
+    var iva =  parseFloat (subtotal*0.16); req.body.iva;
+    var total =  parseFloat (subtotal+iva); req.body,total;
+
+ 
+        pagina = '<!DOCTYPE html> <html lang="en"> <body> <h1> FACTURA:</h1>';            
+        
+                                       
+                pagina = pagina + "<p> " + nombre +"  "+ rfc + " Compro  </p>" ;         
+                pagina = pagina + "<p> Clave Articulo:"  + clavearticulo + "  </p>";
+                pagina = pagina + "<p> Subtotal:"  + subtotal + "  </p>";
+                pagina = pagina + "<p> Iva:"  + iva + "  </p>";
+                pagina = pagina + "<p> Total:"  + total + "  </p>";        
 
 
-
-        pagina = '<!DOCTYPE html> <html lang="en"> <body> <h1> FACTURA:</h1>';   
-                                
-                pagina = pagina + "<p> "  + nombre +"  "+ rfc + " compro  </p>" ;         
-                pagina = pagina + "<p> "  + clavearticulo + "  </p>";
-                pagina = pagina +  (subtotal +=);
-                pagina = pagina + (iva = subtotal*0.16);
-                pagina = pagina + (total = subtotal+iva);
 
         pagina = pagina + '<body> </html>';
 

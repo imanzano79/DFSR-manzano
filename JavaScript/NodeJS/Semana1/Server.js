@@ -109,23 +109,24 @@ app.post('/factura', (req, res) => {
     var clavearticulo = req.body.clavearticulo;
     var precio = req.body.precio;
     var cantidad = req.body.cantidad;
-    var subtotal = parseFloat (precio * cantidad);  req.body.subtotal; 
-    var iva =  parseFloat (subtotal*0.16); req.body.iva;
-    var total =  parseFloat (subtotal+iva); req.body,total;
+    var subtotal = precio * cantidad;
+    var iva =  subtotal*0.16;
+    var total =  subtotal+iva; 
 
  
-        pagina = '<!DOCTYPE html> <html lang="en"> <body> <h1> FACTURA:</h1>';            
+        pagina = '<!DOCTYPE html> <html lang="en"> <body> <table class="table table-striped"> <h1> FACTURA:</h1> ';            
         
                                        
-                pagina = pagina + "<p> " + nombre +"  "+ rfc + " Compro  </p>" ;         
-                pagina = pagina + "<p> Clave Articulo:"  + clavearticulo + "  </p>";
-                pagina = pagina + "<p> Subtotal:"  + subtotal + "  </p>";
-                pagina = pagina + "<p> Iva:"  + iva + "  </p>";
-                pagina = pagina + "<p> Total:"  + total + "  </p>";        
+                pagina = pagina + "<p> Nombre: " + nombre + " </p>" ;
+                pagina = pagina + "<p> RFC:  "+ rfc + "  </p>" ;
+                pagina = pagina + "<p> Compro:  "+ cantidad + "  </p>" ;         
+                pagina = pagina + "<p> Clave Articulo: "  + clavearticulo + "  </p>";
+                pagina = pagina + "<p> Subtotal: "  + subtotal + "  </p>";
+                pagina = pagina + "<p> Iva: "  + iva + "  </p>";
+                pagina = pagina + "<p> Total: "  + total + "  </p>";        
 
 
-
-        pagina = pagina + '<body> </html>';
+        pagina = pagina + '<body>  </table> </html> ';
 
         res.send(pagina);
 

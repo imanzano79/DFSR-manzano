@@ -113,6 +113,7 @@ app.post('/factura', (req, res) => {
     var iva =  subtotal*0.16;
     var total =  subtotal+iva; 
 
+    console.log(iva)
  
         pagina = '<!DOCTYPE html> <html lang="en">  <body>  <h1> FACTURA:</h1> '; 
         

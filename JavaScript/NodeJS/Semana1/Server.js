@@ -114,7 +114,7 @@ app.post('/factura', (req, res) => {
     var total =  subtotal+iva; 
 
  
-        pagina = '<!DOCTYPE html> <html lang="en"> <body> <table class="table table-striped"> <h1> FACTURA:</h1> ';            
+        pagina = '<!DOCTYPE html> <html lang="en">  <body>  <h1> FACTURA:</h1> '; 
         
                                        
                 pagina = pagina + "<p> Nombre: " + nombre + " </p>" ;
@@ -126,7 +126,7 @@ app.post('/factura', (req, res) => {
                 pagina = pagina + "<p> Total: "  + total + "  </p>";        
 
 
-        pagina = pagina + '<body>  </table> </html> ';
+        pagina = pagina + '<body>  </html> ';
 
         res.send(pagina);
 

@@ -1,3 +1,6 @@
+tarea:  buscar 10 errores del protoclo http
+
+
 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
 
 

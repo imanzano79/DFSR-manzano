@@ -1,4 +1,4 @@
-const router = require('express').Router(); 
+const router = require('express').Router(); //utiliza el propio ruteador de express
 
 router.get('/registrar', (req, res) =>{
     res.render("registrate.ejs")

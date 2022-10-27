@@ -1,0 +1,30 @@
+Basicamente diseñaremos una aplicacion ya con conexion  a BD (MongoDB)
+
+Utilizaremos lo siguiente
+
+- NodeJS
+- MongoDB (Mongoose)
+- JWT 
+- View
+
+
+Verbos comunes HTTP 
+
+- GET
+- POST
+- PUT (Actualizaciones)
+- DELETE
+
+TIPOS DE APIS 
+REST y SOAP 
+JSON (JavaScript Object Notation )
+    tuplas (Clave-valor)
+SOAP 
+    XML (nodos)
+
+    
+
+
+
+ API REST 
+

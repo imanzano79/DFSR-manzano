@@ -1,9 +1,12 @@
 const express = require('express'); 
 const mongoose = require('mongoose'); 
 const bodyparser = require('body-parser'); 
+const flash = require('connect-flash')
 
 
-const app = express(); 
+
+const app = express();
+
 
 
 app.set('views engine', 'ejs'); 
@@ -15,25 +18,24 @@ const authRoutes = require('./routes/auth');
 app.use('/api/user', authRoutes); 
 
 
-const db = require('./models');
-//var MongoClient = require('mongodb').MongoClient;
 
-const Role = db.Role;
+const db = require('./models');     
+//ar MongoClient = require('mongodb').MongoClient;
 
-
-        mongoose.connect('mongodb://localhost:27017/usuarios',{
-            useNewUrlParser: true,
-            useUnifiedTopology: true,    
-            }).then(() => {
-                    console.log("Conexion exitosa a la BD");
-
-            }).catch(err =>{
-                console.log("Error en conexion", err);
-                process.exit();
-            });
+const Role =  db.Role; 
 
 
 
+mongoose.connect('mongodb://localhost:27017/test',{
+        useNewUrlParser : true, 
+        useUnifiedTopology : true
+    }).then(() =>{
+        console.log("Conexion exitosa a la BD"); 
+       // initial(); 
+    }).catch(err =>{
+        console.log("Error en conexion", err); 
+        process.exit(); 
+    });
 
 
 app.get('/', (req, res) =>{
@@ -54,6 +56,9 @@ app.use(function(req, res, next) {
 next(err); 
 
 });
+
+
+
 
 
 const PORT = process.env.PORT || 3000; 

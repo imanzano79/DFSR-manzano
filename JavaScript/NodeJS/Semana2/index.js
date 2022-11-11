@@ -18,6 +18,11 @@ const authRoutes = require('./routes/auth');
 app.use('/api/user', authRoutes); 
 
 
+const productsRoutes = require('./routes/products'); 
+app.use('/api/products', productsRoutes); 
+
+
+
 
 const db = require('./models');     
 //ar MongoClient = require('mongodb').MongoClient;

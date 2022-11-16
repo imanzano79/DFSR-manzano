@@ -10,38 +10,34 @@
     <%- include('navar'); %>
     
 <div class="container">
-    <h1>Login</h1>
+    <h1>Nuevo Producto</h1>
     <form action="/api/products/nuevo" method="POST">
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Clave:</label>
+          <label for="exampleInputEmail1" class="form-label">Clave</label>
           <input type="text" class="form-control" aria-describedby="emailHelp" name='clave' required>
         
         </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Nombre</label>
+          <input type="text" class="form-control" name="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" name="descripcion" required>
+          </div>
 
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" name='nombre' required>           
-          </div>
+            <label for="exampleInputPassword1" class="form-label">Cantidad</label>
+            <input type="number" min="1" max="500" class="form-control" name="cantidad" required>
+        </div>
 
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Descripcion:</label>
-            <input type="text" class="form-control" aria-describedby="emailHelp" name='descripcion' required>           
-          </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Precio</label>
+            <input type="number" min="1"  class="form-control" name="precio" required>
+        </div>
+     
 
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Cantidad:</label>
-            <input type="number" min="1" max="500" class="form-control" aria-describedby="emailHelp" name='cantidad' required>           
-          </div>
-
-          <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Precio:</label>
-            <input type="number" min="1"  class="form-control" aria-describedby="emailHelp" name='precio' required>           
-          </div>
-
-   
-        <input type="hidden" name="role" value="user">
-
-        <button type="submit" class="btn btn-primary">Nuevo.</button>
+        <button type="submit" class="btn btn-primary">Nuevo</button>
       </form>
 </div>
    

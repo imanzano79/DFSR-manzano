@@ -1,0 +1,33 @@
+   
+<div class="container">
+    <br>
+<hr>
+<br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Clave</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cantidad</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+        <%if (productos) {%>
+          <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        <%  }%>
+        <%if (!productos) {%>
+        <p>No hay productos en existencia</p>
+            <%  }%>
+        </tbody>
+      </table>
+</div>

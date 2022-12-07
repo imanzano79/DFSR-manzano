@@ -1,22 +1,22 @@
 const router = require('express').Router();
-const Producto = require('../models/product.model');
+const Productosrv = require('../models/servicio.model');
 const flash = require('connect-flash');
 const { product } = require('../models');
 
-router.get('/productos',  async (req, res) =>{
+router.get('/servicios',  async (req, res) =>{
     console.log("ENTRA");
     try{
-        const productos = await  Producto.find({}); 
+        const servicios = await  Productosrv.find({}); 
        
-        if(productos){
-            console.log("Existen", productos);
-            res.render("productos.ejs", {
-                productos: productos, 
+        if(servicios){
+            console.log("Existen", servicios);
+            res.render("servicios.ejs", {
+                servicios: servicios, 
                 error : false
             }); 
         }
         else{
-            res.render("productos.ejs", {
+            res.render("servicios.ejs", {
                 error : true, 
                 mensaje : "No se encontraron productos."
             }); 
@@ -28,12 +28,12 @@ router.get('/productos',  async (req, res) =>{
     }  
 });
 
-router.get('/nuevo', (req, res) =>{
-    res.render("producto_nuevo.ejs")
+router.get('/nuevosrv', (req, res) =>{
+    res.render("servicio_nuevo.ejs")
 }); 
 
 
-router.post('/nuevo', async (req, res) =>{
+router.post('/nuevosrv', async (req, res) =>{
     let claveProd; 
     let nombreProd; 
     let cantidadProd; 
@@ -47,7 +47,7 @@ router.post('/nuevo', async (req, res) =>{
     precioProd = req.body.precio; 
 
     if(claveProd && nombreProd && descripcionProd && cantidadProd &&precioProd ){
-        var newProduct  = new Producto({
+        var newProduct  = new Productosrv({
             claveProducto : claveProd, 
             nombre : nombreProd, 
             descripcion : descripcionProd, 
@@ -57,7 +57,7 @@ router.post('/nuevo', async (req, res) =>{
         try{
                 console.log("Insertando nuevo producto"); 
                 const producto = await newProduct.save(); 
-                res.redirect('/api/products/productos');
+                res.redirect('/api/servicio/servicios');
         }
         catch(error){
             res.status(400).json({error});
@@ -69,20 +69,20 @@ router.post('/nuevo', async (req, res) =>{
 
 
 
-router.get('/editar/:id', async(req, res) =>{
+router.get('/editarsrv/:id', async(req, res) =>{
     const id = req.params.id; 
     console.log("LLEGO EL ID", id);
     try{
 
-     const producto = await Producto.findOne({_id: id}); 
-     if(producto){
-        console.log(producto); 
-        res.render("editar_producto.ejs", {
-            producto : producto, 
+     const editarsrv = await Productosrv.findOne({_id: id}); 
+     if(editarsrv){
+        console.log(editarsrv); 
+        res.render("editar_servicio.ejs", {
+            editarsrv : editarsrv, 
             error : false
         })
      }else{
-        res.render("editar_producto.ejs", {
+        res.render("editar_servicio.ejs", {
            
             error : true, 
             mensaje : "No se encontro el producto"
@@ -97,14 +97,14 @@ router.get('/editar/:id', async(req, res) =>{
     
 }); 
 
-router.get('/delete/:id', async (req, res) =>{
+router.get('/deletesrv/:id', async (req, res) =>{
     const id = req.params.id; 
     console.log("LLEGO el ID", id);
     try{
-        const borrado = await Producto.findByIdAndDelete({_id: id}); 
+        const borrado = await Productosrv.findByIdAndDelete({_id: id}); 
         console.log(borrado); 
         if(borrado){
-            res.redirect('/api/products/productos');
+            res.redirect('/api/servicio/servicios');
          }
 
     }
@@ -114,7 +114,7 @@ router.get('/delete/:id', async (req, res) =>{
 });
 
 
-router.post('/editar', async(req, res) =>{
+router.post('/editarsrv', async(req, res) =>{
 
     console.log("LLEGA EDITAR")
     let id; 
@@ -143,7 +143,7 @@ router.post('/editar', async(req, res) =>{
     
       
         try{
-            const productoAEditar = await Producto.findByIdAndUpdate(
+            const productoAEditar = await Productosrv.findByIdAndUpdate(
                 id, {
                     claveProducto : claveProd, 
                     nombre : nombreProd, 
@@ -154,7 +154,7 @@ router.post('/editar', async(req, res) =>{
             );
                 
 
-                res.redirect('/api/products/productos');
+                res.redirect('/api/servicio/servicios');
         }
         catch(error){
             res.status(400).json({error});

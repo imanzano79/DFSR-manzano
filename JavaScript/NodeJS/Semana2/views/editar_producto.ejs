@@ -10,7 +10,8 @@
     <%- include('navar'); %>
     
 <div class="container">
-    <h1>Editar Producto</h1>
+  <br>
+    <h1>Editar Producto:</h1>
     <form action="/api/products/editar" method="POST">
        
        <% if(error) {%>
@@ -19,7 +20,7 @@
        <% if(!error) {%>
         <div class="mb-3">
            
-            <input type="hidden" class="form-control" name="id" value="<%= producto._id %>" required>
+            <input type="hidden" class="form-control" name="id" value="<%= producto._id %>"  >
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Clave</label>

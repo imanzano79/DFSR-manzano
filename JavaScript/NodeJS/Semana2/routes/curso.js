@@ -1,22 +1,22 @@
 const router = require('express').Router();
-const Producto = require('../models/product.model');
+const Curso = require('../models/curso.model');
 const flash = require('connect-flash');
 const { product } = require('../models');
 
-router.get('/productos',  async (req, res) =>{
+router.get('/cursos',  async (req, res) =>{
     console.log("ENTRA");
     try{
-        const productos = await  Producto.find({}); 
+        const cursos = await  Curso.find({}); 
        
-        if(productos){
-            console.log("Existen", productos);
-            res.render("productos.ejs", {
-                productos: productos, 
+        if(cursos){
+            console.log("Existen", cursos);
+            res.render("cursos.ejs", {
+                cursos: cursos, 
                 error : false
             }); 
         }
         else{
-            res.render("productos.ejs", {
+            res.render("cursos.ejs", {
                 error : true, 
                 mensaje : "No se encontraron productos."
             }); 
@@ -28,12 +28,12 @@ router.get('/productos',  async (req, res) =>{
     }  
 });
 
-router.get('/nuevo', (req, res) =>{
-    res.render("producto_nuevo.ejs")
+router.get('/nuevoCurso', (req, res) =>{
+    res.render("curso_nuevo.ejs")
 }); 
 
 
-router.post('/nuevo', async (req, res) =>{
+router.post('/nuevoCurso', async (req, res) =>{
     let claveProd; 
     let nombreProd; 
     let cantidadProd; 
@@ -47,7 +47,7 @@ router.post('/nuevo', async (req, res) =>{
     precioProd = req.body.precio; 
 
     if(claveProd && nombreProd && descripcionProd && cantidadProd &&precioProd ){
-        var newProduct  = new Producto({
+        var newProduct  = new Curso({
             claveProducto : claveProd, 
             nombre : nombreProd, 
             descripcion : descripcionProd, 
@@ -57,7 +57,7 @@ router.post('/nuevo', async (req, res) =>{
         try{
                 console.log("Insertando nuevo producto"); 
                 const producto = await newProduct.save(); 
-                res.redirect('/api/products/productos');
+                res.redirect('/api/curso/cursos');
         }
         catch(error){
             res.status(400).json({error});
@@ -69,20 +69,20 @@ router.post('/nuevo', async (req, res) =>{
 
 
 
-router.get('/editar/:id', async(req, res) =>{
+router.get('/editarCurso/:id', async(req, res) =>{
     const id = req.params.id; 
     console.log("LLEGO EL ID", id);
     try{
 
-     const producto = await Producto.findOne({_id: id}); 
-     if(producto){
-        console.log(producto); 
-        res.render("editar_producto.ejs", {
-            producto : producto, 
+     const editarCurso = await Curso.findOne({_id: id}); 
+     if(editarCurso){
+        console.log(editarCurso); 
+        res.render("editar_curso.ejs", {
+            editarCurso : editarCurso, 
             error : false
         })
      }else{
-        res.render("editar_producto.ejs", {
+        res.render("editar_curso.ejs", {
            
             error : true, 
             mensaje : "No se encontro el producto"
@@ -97,14 +97,14 @@ router.get('/editar/:id', async(req, res) =>{
     
 }); 
 
-router.get('/delete/:id', async (req, res) =>{
+router.get('/deleteCurso/:id', async (req, res) =>{
     const id = req.params.id; 
     console.log("LLEGO el ID", id);
     try{
-        const borrado = await Producto.findByIdAndDelete({_id: id}); 
+        const borrado = await Curso.findByIdAndDelete({_id: id}); 
         console.log(borrado); 
         if(borrado){
-            res.redirect('/api/products/productos');
+            res.redirect('/api/curso/cursos');
          }
 
     }
@@ -114,7 +114,7 @@ router.get('/delete/:id', async (req, res) =>{
 });
 
 
-router.post('/editar', async(req, res) =>{
+router.post('/editarCurso', async(req, res) =>{
 
     console.log("LLEGA EDITAR")
     let id; 
@@ -143,7 +143,7 @@ router.post('/editar', async(req, res) =>{
     
       
         try{
-            const productoAEditar = await Producto.findByIdAndUpdate(
+            const productoAEditar = await Curso.findByIdAndUpdate(
                 id, {
                     claveProducto : claveProd, 
                     nombre : nombreProd, 
@@ -154,7 +154,7 @@ router.post('/editar', async(req, res) =>{
             );
                 
 
-                res.redirect('/api/products/productos');
+                res.redirect('/api/curso/cursos');
         }
         catch(error){
             res.status(400).json({error});

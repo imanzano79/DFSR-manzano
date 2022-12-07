@@ -9,20 +9,22 @@ const app = express();
 
 
 
-app.set('views engine', 'ejs'); 
 
 app.use(bodyparser.urlencoded({extended:false})); 
 app.use(bodyparser.json()); 
 
+
 const authRoutes = require('./routes/auth'); 
 app.use('/api/user', authRoutes); 
-
 
 const productsRoutes = require('./routes/products'); 
 app.use('/api/products', productsRoutes); 
 
+const servicioRoutes = require('./routes/servicio'); 
+app.use('/api/servicio', servicioRoutes); 
 
-
+const cursoRoutes = require('./routes/curso'); 
+app.use('/api/curso', cursoRoutes); 
 
 const db = require('./models');     
 //ar MongoClient = require('mongodb').MongoClient;
@@ -51,8 +53,13 @@ app.get('/', (req, res) =>{
         }
     );  */
 
+
     res.render('index.ejs');
 });
+
+
+app.set('views', './views');
+app.set('view engine', 'ejs'); 
 
 
 app.use(function(req, res, next) {
